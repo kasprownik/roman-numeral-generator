@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Roman Numeral Generator</title>
+</head>
+<body>
+<h1>Roman Numeral Generator</h1>
+<input placeholder="Type number" type="number" id="input" type="text"/>
+<button id="button">Convert to roman</button>
+<div id="result"></div>
+<script src="romanNumeralGenerator.js"></script>
+<script>
+    window.addEventListener('load', function () {
+
+        var button = document.querySelector('#button');
+        var input = document.querySelector('#input');
+        var result = document.querySelector('#result');
+
+        button.addEventListener('click', function () {
+            var text;
+            try {
+                text = window.romanNumeralGenerator(parseInt(input.value, 10));
+            } catch (e) {
+                text = e.message;
+            }
+            result.innerText = text;
+        });
+    });
+</script>
+</body>
+</html>
